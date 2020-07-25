@@ -1,0 +1,15 @@
+@import "fonts.scss";
+
+html,
+body {
+  font-size: 1rem;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Poppins-Regular, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
