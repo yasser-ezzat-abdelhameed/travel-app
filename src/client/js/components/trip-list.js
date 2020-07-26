@@ -20,7 +20,7 @@ export default function renderTripList() {
   /* Handling dynamic data */
   const tripListContainerElm = document.querySelector("#trip-list-container");
   const { trips } = store.getState();
-  if (trips.length) {
+  if (trips && trips.length) {
     tripListContainerElm.textContent = `There are ${trips.length} added!`;
   } else {
     tripListContainerElm.textContent = "There are no trips added!";
