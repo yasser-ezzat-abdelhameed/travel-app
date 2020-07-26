@@ -23,3 +23,18 @@ body {
   color: $dark;
   padding: 1em;
 }
+
+.floating-action-btn {
+  position: fixed;
+  right: 1em;
+  bottom: 3em;
+  z-index: 1;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: $purple;
+  border: none;
+  color: $white;
+  font-size: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

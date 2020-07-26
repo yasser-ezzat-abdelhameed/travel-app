@@ -3,18 +3,31 @@ import { SET_CURRENT_VIEW } from "../actions";
 import VIEWS from "../views";
 
 export default function renderTripList() {
-  console.log("renderTripList");
-  const tripListElm = document.createElement("div");
-  tripListElm.innerHTML = `
+  /* Element creation */
+  const component = document.createElement("div");
+  component.innerHTML = `
     <div>
-      <div>The list goes here!</div>
-      <button id="go-to-form">Go to form</button>
+      <div id="trip-list-container"></div>
+      <button class="floating-action-btn" id="add-trip-btn">+</button>
     </div>
   `;
+
+  /* Appending to DOM */
   const mainElm = document.querySelector("#main");
   mainElm.innerHTML = "";
-  mainElm.appendChild(tripListElm);
-  document.querySelector("#go-to-form").addEventListener("click", () => {
+  mainElm.appendChild(component);
+
+  /* Handling dynamic data */
+  const tripListContainerElm = document.querySelector("#trip-list-container");
+  const { trips } = store.getState();
+  if (trips.length) {
+    tripListContainerElm.textContent = `There are ${trips.length} added!`;
+  } else {
+    tripListContainerElm.textContent = "There are no trips added!";
+  }
+
+  /* Event listeners */
+  document.querySelector("#add-trip-btn").addEventListener("click", () => {
     store.dispatch({
       type: SET_CURRENT_VIEW,
       currentView: VIEWS.TRIP_FORM,
