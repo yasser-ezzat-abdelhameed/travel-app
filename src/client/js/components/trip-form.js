@@ -10,11 +10,11 @@ export default function renderTripForm() {
     <form name="trip-form" id="trip-form" onsubmit="return Client.submitTrip(event)">
       <section class="form-group">
         <label for="destination">Place</label>
-        <input type="text" id="destination" name="destination" />
+        <input type="text" id="destination" name="destination" required />
       </section>
       <section class="form-group">
         <label for="start-date">From</label>
-        <input type="date" id="start-date" name="start-date" />
+        <input type="date" id="start-date" name="start-date" required />
       </section>
       <section class="form-group">
         <label for="end-date">To</label>
