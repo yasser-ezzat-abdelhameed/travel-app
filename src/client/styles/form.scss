@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 form {
   display: flex;
   flex-direction: column;
@@ -7,13 +9,30 @@ form {
     align-items: center;
   }
   label {
-    padding-right: 1em;
+    flex: 1;
   }
-  input[type="text"] {
+  input[type="text"],
+  input[type="date"],
+  textarea,
+  button,
+  input[type="submit"] {
     font-size: 1em;
     padding: 0.5em;
     border: none;
     border-radius: 0.2em;
-    flex: 1;
+    flex: 2;
+  }
+  button,
+  input[type="submit"] {
+    background-color: $purple;
+    color: $white;
+  }
+  .todo-form-group {
+    input[type="text"] {
+      flex: 3;
+    }
+    button {
+      flex: 1;
+    }
   }
 }
