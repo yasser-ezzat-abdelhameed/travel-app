@@ -1,15 +1,15 @@
 import store from "../store";
 import { SET_CURRENT_VIEW } from "../actions";
 import VIEWS from "../views";
+import renderTripCard from "./trip-card";
 
 export default function renderTripList() {
   /* Element creation */
   const component = document.createElement("div");
+  component.setAttribute("id", "home");
   component.innerHTML = `
-    <div>
-      <div id="trip-list-container"></div>
-      <button class="floating-action-btn" id="add-trip-btn">+</button>
-    </div>
+    <div id="trip-list-container"></div>
+    <button class="floating-action-btn" id="add-trip-btn">+</button>
   `;
 
   /* Appending to DOM */
@@ -21,7 +21,11 @@ export default function renderTripList() {
   const tripListContainerElm = document.querySelector("#trip-list-container");
   const { trips } = store.getState();
   if (trips && trips.length) {
-    tripListContainerElm.textContent = `There are ${trips.length} added!`;
+    const fragment = document.createDocumentFragment();
+    for (let trip of trips) {
+      fragment.appendChild(renderTripCard(trip));
+    }
+    tripListContainerElm.appendChild(fragment);
   } else {
     tripListContainerElm.textContent = "There are no trips added!";
   }

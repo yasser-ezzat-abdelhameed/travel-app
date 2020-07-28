@@ -22,7 +22,7 @@ export default async function submitTrip(event) {
     const response = await fetch(`http://localhost:5000/travel?destination=${destination}`, {
       method: "GET",
     });
-    const { locationDetails, weatherDetails, error } = await response.json();
+    const { locationDetails, weatherDetails, imageUrl, error } = await response.json();
     if (error) return alert(error);
     store.dispatch({
       type: ADD_TRIP,
@@ -35,6 +35,7 @@ export default async function submitTrip(event) {
         todoList,
         locationDetails,
         weatherDetails,
+        imageUrl,
       },
     });
     store.dispatch({

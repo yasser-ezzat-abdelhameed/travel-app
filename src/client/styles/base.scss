@@ -24,10 +24,15 @@ body {
   padding: 1em;
 }
 
+#home {
+  flex: 1;
+  display: flex;
+}
+
 .floating-action-btn {
   position: fixed;
   right: 1em;
-  bottom: 3em;
+  bottom: 2em;
   z-index: 1;
   width: 1.5em;
   height: 1.5em;
@@ -36,5 +41,48 @@ body {
   border: none;
   color: $white;
   font-size: 2em;
+}
+
+#trip-list-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.todo-card {
+  margin: 1em 0;
+  background-size: cover;
+  color: $dark;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-height: 14em;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "mn mn mn mn mn mn cn"
+    "mn mn mn mn mn mn cn"
+    "mn mn mn mn mn mn cn"
+    "mn mn mn mn mn mn cn"
+    "ft ft ft ft ft ft ft";
+  .todo-card-main {
+    grid-area: mn;
+    padding: 1em;
+  }
+  .todo-card-controls {
+    grid-area: cn;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(150, 0, 0, 0.2);
+  }
+  .todo-card-footer {
+    grid-area: ft;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1em;
+  }
 }
