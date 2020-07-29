@@ -1,6 +1,4 @@
 import store from "../store";
-import { SET_CURRENT_VIEW, REMOVE_SELECTED_TRIP_ID } from "../actions";
-import VIEWS from "../views";
 import renderTodoFormElement from "./todo-form-element";
 
 export default function renderTripForm() {

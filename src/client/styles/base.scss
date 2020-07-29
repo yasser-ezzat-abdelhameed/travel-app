@@ -114,3 +114,18 @@ body {
     font-size: 1.5em;
   }
 }
+
+#trip-details {
+  .header-image {
+    min-height: 16em;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .info {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 2em 1fr;
+    grid-gap: 1em;
+  }
+}
