@@ -6,7 +6,17 @@
   width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: $off-white;
+  div {
+    width: 100%;
+    position: relative;
+    text-align: center;
+  }
+  .back-btn {
+    position: absolute;
+    left: 1em;
+  }
 }
 
 #header a {

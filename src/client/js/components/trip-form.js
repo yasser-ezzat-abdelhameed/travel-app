@@ -22,7 +22,6 @@ export default function renderTripForm() {
   /* Element creation */
   const renderTripForm = document.createElement("div");
   renderTripForm.innerHTML = `
-    <button id="back">Go back</button>
     <form name="trip-form" id="trip-form" onsubmit="return Client.submitTrip(event)">
       <section class="form-group">
         <label for="destination">Place</label>
@@ -64,16 +63,6 @@ export default function renderTripForm() {
   }
 
   /* Event listeners */
-  document.querySelector("#back").addEventListener("click", () => {
-    store.dispatch({
-      type: SET_CURRENT_VIEW,
-      currentView: VIEWS.HOME,
-    });
-    store.dispatch({
-      type: REMOVE_SELECTED_TRIP_ID,
-    });
-  });
-
   document.querySelector("#todo-btn").addEventListener("click", (event) => {
     event.preventDefault();
     renderTodoFormElement();
