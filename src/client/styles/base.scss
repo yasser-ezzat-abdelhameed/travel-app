@@ -59,14 +59,37 @@ body {
   width: 100%;
   display: grid;
   grid-template-areas:
-    "mn mn mn mn mn mn cn"
-    "mn mn mn mn mn mn cn"
-    "mn mn mn mn mn mn cn"
-    "mn mn mn mn mn mn cn"
-    "ft ft ft ft ft ft ft";
+    "mn mn mn mn mn cn"
+    "mn mn mn mn mn cn"
+    "mn mn mn mn mn cn"
+    "mn mn mn mn mn cn"
+    "ft ft ft ft ft ft";
   .todo-card-main {
     grid-area: mn;
     padding: 1em;
+    .info-container {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.5em;
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      color: $dark;
+      text-shadow: 1px 1px $purple, -1px 1px yellow;
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+    }
+    .leading {
+      width: 2.5em;
+    }
+    img {
+      height: 1.81em;
+    }
+    .trailing {
+      padding-left: 1em;
+      flex: 1;
+    }
   }
   .todo-card-controls {
     grid-area: cn;
@@ -74,15 +97,20 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(150, 0, 0, 0.2);
+    background-color: rgba(68, 68, 68, 0.3);
   }
   .todo-card-footer {
     grid-area: ft;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(85, 85, 204, 0.8);
     color: $white;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 1em;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+  }
+  i {
+    color: $white;
+    font-size: 1.5em;
   }
 }

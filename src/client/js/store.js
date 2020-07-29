@@ -1,4 +1,4 @@
-import { trips, currentView } from "./reducers";
+import { trips, currentView, selectedTripId } from "./reducers";
 
 function initState() {
   try {
@@ -38,6 +38,7 @@ function app(state = {}, action) {
   return {
     trips: trips(state.trips, action),
     currentView: currentView(state.currentView, action),
+    selectedTripId: selectedTripId(state.selectedTripId, action),
   };
 }
 

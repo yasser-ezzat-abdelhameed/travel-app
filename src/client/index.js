@@ -6,10 +6,17 @@ import "./styles/header.scss";
 import "./styles/footer.scss";
 import "./styles/form.scss";
 import "./styles/loader.scss";
+import "./styles/fa.scss";
 import app from "./js/app";
-import { submitTrip } from "./js/eventHandlers";
+import {
+  submitTrip,
+  handleImageError,
+  handleEditBtnClick,
+  handleDeleteBtnClick,
+  handleViewBtnClick,
+} from "./js/eventHandlers";
 
 console.log("Hello world!");
 app();
 
-export { submitTrip };
+export { submitTrip, handleImageError, handleEditBtnClick, handleDeleteBtnClick, handleViewBtnClick };

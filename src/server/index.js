@@ -47,3 +47,18 @@ app.get("/travel", async ({ query: { destination, startDate } }, res) => {
     return res.json({ error: e.message });
   }
 });
+
+app.get("/image", async ({ query: { destination } }, res) => {
+  try {
+    if (!destination) return res.json({ error: "destination must be provided in query params" });
+    const {
+      data: { hits },
+    } = await axios.get(PIXABAY_BASE_URL + destination.replace(" ", "+"));
+    let imageUrl = "";
+    if (hits && hits.length) [{ webformatURL: imageUrl }] = hits;
+    return res.json({ imageUrl });
+  } catch (e) {
+    console.log(e);
+    return res.json({ error: e.message });
+  }
+});
