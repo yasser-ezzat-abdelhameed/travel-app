@@ -135,6 +135,7 @@ body {
   #trip-list-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 18em;
     grid-gap: 1em;
   }
 }
