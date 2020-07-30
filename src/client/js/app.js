@@ -16,7 +16,6 @@ export default function app() {
       renderHeader();
       renderCurrentView();
     }
-    console.log(storedState, store.getState());
     localStorage.setItem("state", JSON.stringify(store.getState()));
   });
   renderHeader();

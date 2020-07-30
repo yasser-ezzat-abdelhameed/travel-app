@@ -20,7 +20,7 @@ export default async function submitTrip(event) {
 
   try {
     const { selectedTripId } = store.getState();
-    const response = await fetch(`http://localhost:5000/travel?destination=${destination}`, {
+    const response = await fetch(`/api/travel?destination=${destination}`, {
       method: "GET",
     });
     const { locationDetails, weatherDetails, imageUrl, error } = await response.json();

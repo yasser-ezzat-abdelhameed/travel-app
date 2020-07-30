@@ -14,13 +14,13 @@ app.use(cors());
 app.use(express.static("dist"));
 
 app.get("/", function (_, res) {
-  // res.sendFile('dist/index.html')
-  res.sendFile(path.resolve("src/client/views/index.html"));
+  res.sendFile("dist/index.html");
+  // res.sendFile(path.resolve("src/client/views/index.html"));
 });
 
 app.listen(PORT, function () {
   console.log(`Example app listening on port ${PORT}!`);
 });
 
-app.get("/travel", handleGetTravel);
-app.get("/image", handleGetImage);
+app.get("/api/travel", handleGetTravel);
+app.get("/api/image", handleGetImage);
