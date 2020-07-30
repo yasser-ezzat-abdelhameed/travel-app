@@ -129,3 +129,17 @@ body {
     grid-gap: 1em;
   }
 }
+
+@media (min-width: 768px) {
+  #trip-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  #trip-list-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
